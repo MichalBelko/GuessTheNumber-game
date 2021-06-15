@@ -1,11 +1,5 @@
 "use strict";
 
-// 2. In the handler function, restore initial values of the 'score' and
-// 'secretNumber' variables
-// 3. Restore the initial conditions of the message, number, score and guess input
-// fields
-// 4. Also restore the original background color (#222) and number width (15rem)
-
 const guess = Number(document.querySelector(".guess").value);
 let RandomNumber = Math.trunc(Math.random() * 20 + 1);
 let score = 20;
@@ -33,6 +27,7 @@ document.querySelector(".check").addEventListener("click", function () {
     document.querySelector(".number").textContent = RandomNumber;
     if (score > highscore) {
       highscore = score;
+      localStorage.setItem("highscore", highscore.toString());
       document.querySelector(".highscore").textContent = highscore;
       document.querySelector(".highscore").style.fontWeight = "bold";
     }
@@ -53,3 +48,6 @@ document.querySelector(".check").addEventListener("click", function () {
     document.querySelector(".message").textContent = "No Number!";
   }
 });
+
+const data = localStorage.getItem("highscore");
+document.querySelector(".highscore").textContent = data;
