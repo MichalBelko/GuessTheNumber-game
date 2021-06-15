@@ -100,7 +100,6 @@ h1 {
   margin-bottom: 3rem;
 }
 .guess:focus {
-  border: none;
   outline: none;
 }
 
