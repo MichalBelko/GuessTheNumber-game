@@ -99,6 +99,10 @@ h1 {
   display: block;
   margin-bottom: 3rem;
 }
+.guess:focus {
+  border: none;
+  outline: none;
+}
 
 .btn {
   border: none;
